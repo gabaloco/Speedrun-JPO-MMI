@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Neo Brutalisme Color Palette - NOUVELLE DA */
+    /* Couleur principale: #602EFF */
+    --primary: 255 100% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Couleurs secondaires */
+    --yellow: 57 100% 50%;      /* #FFF200 */
+    --cyan: 193 100% 69%;       /* #5FDDFF */
+    --pink: 282 100% 78%;       /* #DE8FFF */
+
+    /* Background blanc pour grille visible */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --secondary: 57 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 60 10% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 282 100% 78%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 255 100% 59%;
+
+    --radius: 0px;
+
+    /* Neo Brutalisme Custom tokens */
+    --glow-primary: 0 0 0px hsl(255 100% 59%);
+    --glow-secondary: 0 0 0px hsl(57 100% 50%);
+    --glow-success: 0 0 0px hsl(142 76% 45%);
+    --glow-error: 0 0 0px hsl(0 84% 60%);
+
+    --gradient-primary: linear-gradient(135deg, hsl(255 100% 59%), hsl(282 100% 78%));
+    --gradient-dark: linear-gradient(180deg, hsl(60 20% 95%), hsl(60 15% 90%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(60 20% 98%));
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-sans antialiased;
+    font-family: 'Outfit', sans-serif;
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(to right, #e8e8e8 1px, transparent 1px),
+      linear-gradient(to bottom, #e8e8e8 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Neo Brutalisme Styles - Style signature */
+  .neobrutalist {
+    border: 3px solid hsl(0 0% 0%);
+    box-shadow:
+      6px 6px 0px hsl(255 100% 59%);
+    transition: all 0.15s ease;
+  }
+
+  .neobrutalist:hover {
+    transform: translate(-2px, -2px);
+    box-shadow:
+      8px 8px 0px hsl(255 100% 59%);
+  }
+
+  .neobrutalist:active {
+    transform: translate(2px, 2px);
+    box-shadow:
+      2px 2px 0px hsl(255 100% 59%);
+  }
+
+  .neobrutalist-border {
+    border: 3px solid hsl(0 0% 0%);
+    box-shadow: 4px 4px 0px hsl(255 100% 59%);
+  }
+
+  .neobrutalist-text {
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  /* Variante avec ombre jaune */
+  .brutal-yellow {
+    border: 3px solid hsl(0 0% 0%);
+    background: hsl(57 100% 50%);
+    box-shadow: 6px 6px 0px hsl(0 0% 0%);
+    color: hsl(0 0% 0%);
+    font-weight: 700;
+    transition: all 0.15s ease;
+  }
+
+  .brutal-yellow:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px hsl(0 0% 0%);
+  }
+
+  .brutal-yellow:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(0 0% 0%);
+  }
+
+  /* Variante avec ombre cyan */
+  .brutal-cyan {
+    border: 3px solid hsl(0 0% 0%);
+    background: hsl(193 100% 69%);
+    box-shadow: 6px 6px 0px hsl(0 0% 0%);
+    color: hsl(0 0% 0%);
+    font-weight: 700;
+    transition: all 0.15s ease;
+  }
+
+  .brutal-cyan:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px hsl(0 0% 0%);
+  }
+
+  .brutal-cyan:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(0 0% 0%);
+  }
+
+  /* Variante avec ombre rose */
+  .brutal-pink {
+    border: 3px solid hsl(0 0% 0%);
+    background: hsl(282 100% 78%);
+    box-shadow: 6px 6px 0px hsl(0 0% 0%);
+    color: hsl(0 0% 0%);
+    font-weight: 700;
+    transition: all 0.15s ease;
+  }
+
+  .brutal-pink:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px hsl(0 0% 0%);
+  }
+
+  .brutal-pink:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(0 0% 0%);
+  }
+
+  /* Variante principale violet */
+  .brutal-primary {
+    border: 3px solid hsl(0 0% 0%);
+    background: hsl(255 100% 59%);
+    box-shadow: 6px 6px 0px hsl(0 0% 0%);
+    color: hsl(0 0% 100%);
+    font-weight: 700;
+    transition: all 0.15s ease;
+  }
+
+  .brutal-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px hsl(0 0% 0%);
+  }
+
+  .brutal-primary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(0 0% 0%);
+  }
+
+  /* Accent avec bordure colorée */
+  .brutal-accent {
+    border: 4px solid hsl(0 0% 0%);
+    background: hsl(0 0% 100%);
+    box-shadow:
+      8px 8px 0px hsl(255 100% 59%);
+  }
+
+  /* Cards neo-brutalistes */
+  .brutal-card {
+    border: 3px solid hsl(0 0% 0%);
+    background: hsl(0 0% 100%);
+    box-shadow: 8px 8px 0px hsl(255 100% 59%);
+    transition: all 0.15s ease;
+  }
+
+  .brutal-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px hsl(255 100% 59%);
+  }
+
+  /* Input neo-brutaliste */
+  .brutal-input {
+    border: 3px solid hsl(0 0% 0%);
+    background: hsl(0 0% 100%);
+    box-shadow: 4px 4px 0px hsl(255 100% 59%);
+    outline: none;
+    transition: all 0.15s ease;
+  }
+
+  .brutal-input:focus {
+    box-shadow: 6px 6px 0px hsl(255 100% 59%);
+    transform: translate(-2px, -2px);
+  }
+
+  .glow-primary {
+    box-shadow: 6px 6px 0px hsl(255 100% 59%);
+  }
+
+  .glow-secondary {
+    box-shadow: 6px 6px 0px hsl(57 100% 50%);
+  }
+
+  .glow-success {
+    box-shadow: 6px 6px 0px hsl(142 76% 45%);
+  }
+
+  .glow-error {
+    box-shadow: 6px 6px 0px hsl(0 84% 60%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  /* Header neo-brutaliste */
+  .brutal-header {
+    background: hsl(255 100% 59%);
+    border-bottom: 4px solid hsl(0 0% 0%);
+  }
+
+  /* Badge/Tag neo-brutaliste */
+  .brutal-badge {
+    border: 2px solid hsl(0 0% 0%);
+    padding: 4px 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 6px 6px 0px hsl(255 100% 59%);
+    }
+    50% {
+      box-shadow: 8px 8px 0px hsl(255 100% 59%);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  /* Bouton avec effet de pression */
+  .brutal-btn {
+    position: relative;
+    border: 3px solid hsl(0 0% 0%);
+    padding: 12px 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+
+  .brutal-btn::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 100%;
+    height: 100%;
+    background: hsl(0 0% 0%);
+    z-index: -1;
+    transition: all 0.1s ease;
+  }
+
+  .brutal-btn:hover::after {
+    top: 6px;
+    left: 6px;
+  }
+
+  .brutal-btn:active {
+    transform: translate(4px, 4px);
+  }
+
+  .brutal-btn:active::after {
+    top: 0;
+    left: 0;
+  }
+
+  /* Titre stylisé */
+  .brutal-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 0.9;
+  }
+
+  /* Sticker/Label decoratif */
+  .brutal-sticker {
+    display: inline-block;
+    padding: 8px 16px;
+    background: hsl(57 100% 50%);
+    border: 3px solid hsl(0 0% 0%);
+    transform: rotate(-3deg);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
